@@ -6,4 +6,5 @@ services:
       - "80:80"
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./:/usr/share/nginx/html
     restart: always
