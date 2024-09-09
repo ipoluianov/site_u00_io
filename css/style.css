@@ -636,7 +636,7 @@ a.link_in_text {
     font-size: 12px;
     color: #777777;
     flex-grow: 1;
-    text-align: right;
+    text-align: center;
 }
 
 .bottom_link {
