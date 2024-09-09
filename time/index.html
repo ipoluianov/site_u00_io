@@ -1,0 +1,24 @@
+{#header.html#}
+
+{%title=Current Time - UTC%}
+{%description=Current Time - UTC%}
+
+<h1>Current Time - UTC</h1>
+
+<div style="font-size: 24pt; color: yellow;"  id="clock"></div>
+
+<script>
+    function updateClock() {
+        const clockDiv = document.getElementById('clock');
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        clockDiv.textContent = `${hours}:${minutes}:${seconds}`;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+</script>
+
+{#bottom.html#}
