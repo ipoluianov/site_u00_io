@@ -1,9 +1,8 @@
-{#header.html#}
+<html>
 
-{%title=Current Time%}
-{%description=Current Time%}
 
-  <div style="height: 100vh;display: flex;flex-direction: column;" id="fullHeightElement">
+<body style="background-color: #333;margin: 0px;">
+<div style="height: 100vh;display: flex;flex-direction: column;">
     <div style="text-align: center;background-color: #222;">
       CURRENT TIME
     </div>
@@ -31,8 +30,7 @@
     </div>
   </div>
 
-
-<script>
+  <script>
     function updateClock() {
         const clockDiv = document.getElementById('clock');
         const now = new Date();
@@ -42,15 +40,10 @@
         clockDiv.textContent = `${hours}:${minutes}:${seconds}`;
     }
 
-    function adjustHeight() {
-        const fullHeightElement = document.getElementById('fullHeightElement');
-        fullHeightElement.style.height = `${window.innerHeight}px`;
-    }
-
     setInterval(updateClock, 1000);
     updateClock();
-
-    window.onresize = adjustHeight;
 </script>
 
-{#bottom.html#}
+
+  </body>
+</html>
