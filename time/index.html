@@ -55,6 +55,8 @@
         let fontSize = 350; // Начальный размер шрифта
         text.style.fontSize = fontSize + 'px';
 
+        console.log("FONT:", text.scrollHeight, parent.clientHeight)
+
         // Уменьшаем шрифт, пока текст не впишется в родительский элемент
         while (text.scrollWidth > parent.clientWidth || text.scrollHeight > parent.clientHeight) {
             fontSize--;
