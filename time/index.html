@@ -9,7 +9,7 @@
     </div>
 
     <div style="flex-grow: 1;display: flex;color: #4caf50;">
-      <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; text-align: center;">
+      <div id="textParent" style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; text-align: center;">
         <span style="font-size: clamp(12pt, 15vw, 244pt)" id="clock"></span>
       </div>
     </div>
@@ -46,7 +46,22 @@
         const fullHeightElement = document.getElementById('fullHeightElement');
         fullHeightElement.style.height = `${window.innerHeight}px`;
         console.log("Height calculated")
+        adjustFontSize();
     }
+
+    function adjustFontSize() {
+        const parent = document.getElementById('textParent');
+        const text = document.getElementById('clock');
+        let fontSize = 350; // Начальный размер шрифта
+        text.style.fontSize = fontSize + 'px';
+
+        // Уменьшаем шрифт, пока текст не впишется в родительский элемент
+        while (text.scrollWidth > parent.clientWidth || text.scrollHeight > parent.clientHeight) {
+            fontSize--;
+            text.style.fontSize = fontSize + 'px';
+        }
+    }
+
 
     setInterval(updateClock, 1000);
     updateClock();
